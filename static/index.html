@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANCHOR | Cognitive Prosthetic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Ionicons for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <div class="background-orb orb-1"></div>
+    <div class="background-orb orb-2"></div>
+
+    <div class="app-container">
+        
+        <!-- Header / Context Hub -->
+        <header class="glass-header">
+            <div class="brand">
+                <ion-icon name="boat-outline"></ion-icon>
+                <span>ANCHOR</span>
+            </div>
+            <div class="context-badges">
+                <div class="badge" id="time-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <span>--:--</span>
+                </div>
+                <div class="badge" id="location-badge">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <span>Home</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-area" id="chat-feed">
+            <div class="message system-message">
+                <div class="avatar">
+                    <ion-icon name="boat"></ion-icon>
+                </div>
+                <div class="bubble">
+                    Hello, John. I am ANCHOR. I am here to help you remember and navigate your day.
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <footer class="input-area glass-footer">
+            
+            <div class="input-actions">
+                <button class="action-btn" id="upload-btn" title="Add Image">
+                    <ion-icon name="image-outline"></ion-icon>
+                </button>
+                <input type="file" id="image-input" hidden accept="image/*">
+                
+                <button class="action-btn" id="mic-btn" title="Speak">
+                    <ion-icon name="mic-outline"></ion-icon>
+                </button>
+            </div>
+
+            <div class="text-input-wrapper">
+                <textarea id="user-input" rows="1" placeholder="Ask me anything..."></textarea>
+            </div>
+
+            <button class="send-btn" id="send-btn">
+                <ion-icon name="arrow-up-outline"></ion-icon>
+            </button>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
