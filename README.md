@@ -1,53 +1,80 @@
-# ANCHOR - Cognitive Prosthetic Intelligence
+# ANCHOR: The Cognitive Prosthetic Intelligence
 
-ANCHOR is a sophisticated Cognitive Prosthetic designed to assist individuals with Alzheimer’s or dementia. It serves as an external "Working Memory," providing proactive orientation, safety alerts, and daily reflections.
+<p align="center">
+  <img src="images/hero.png" alt="ANCHOR Hero" width="600px">
+</p>
 
-## 🌟 Features
-- **Proactive Orientation**: Identifies people and surroundings to help users stay oriented.
-- **Anomaly Detection**: Monitors for signs of distress, sundowning, or wandering.
-- **Object Localization**: Helps users find lost items like keys or glasses.
-- **Cognitive Threading**: Maintains a persistent narrative of the day using a long-context window.
-- **Modern Web Interface**: A premium, high-contrast, "Glassmorphism" UI designed for ease of use.
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Python 3.9+
-- A Google Gemini API Key
-
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/LiwaaCoder/ANCHOR-Agent.git
-   cd ANCHOR-Agent
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Configure Environment Variables:
-   Create a `.env` file in the root directory:
-   ```text
-   GOOGLE_API_KEY=your_gemini_api_key_here
-   ```
-
-### Running the Application
-Start the FastAPI server:
-```bash
-uvicorn server:app --reload --host 0.0.0.0 --port 8000
-```
-Then visit [http://localhost:8000](http://localhost:8000).
-
-## 🛡️ Safety & Privacy
-- **PII Redaction**: Automatically masks sensitive numerical data like credit card numbers.
-- **Emergency Alerts**: Built-in `emergency_alert` tool for critical safety scenarios.
-
-## 🛠️ Built With
-- **Gemini 1.5/2.5 Pro**: Core LLM for cognitive reasoning.
-- **FastAPI**: Modern, high-performance web backend.
-- **Vanilla JS/CSS**: Lightweight, responsive frontend with premium aesthetics.
+<p align="center">
+  <img src="https://img.shields.io/badge/Model-Gemini--2.5--Flash-blueviolet?style=for-the-badge&logo=google-gemini" alt="Gemini">
+  <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi" alt="FastAPI">
+  <img src="https://img.shields.io/badge/Safety-PII--Redaction-E91E63?style=for-the-badge&logo=shield" alt="Safety">
+  <img src="https://img.shields.io/badge/Architecture-Cognitive--Threading-4CAF50?style=for-the-badge" alt="Architecture">
+</p>
 
 ---
-*Dedicated to providing dignity and clarity to those navigating memory challenges.*
+
+## 🧠 Overview
+**ANCHOR** is an advanced, AI-driven Cognitive Prosthetic designed to restore dignity and functional independence to individuals with Alzheimer’s, dementia, or severe memory impairment. By serving as an external **"Working Memory,"** ANCHOR bridges the gap between disorientation and clarity.
+
+## 📱 Interface Snapshot
+<p align="center">
+  <img src="images/dashboard.png" alt="Dashboard Screenshot" width="300px">
+</p>
+
+## 🛠️ Technical Architecture
+
+### The "Cognitive Threading" Pipeline
+ANCHOR utilizes a **2-million token context window** to maintain a persistent state of the user's day, ensuring that every interaction is contextually aware and empathetic.
+
+```mermaid
+graph TD
+    Input[Multimodal Input: Audio/Image/Context] --> Redactor[PII Redaction Engine]
+    Redactor --> Gemini[Gemini 2.5 Flash / Long-Context Window]
+    Gemini --> Orientation[Proactive Orientation]
+    Gemini --> Safety[Safety & Anomaly Detection]
+    Gemini --> Reflection[Daily Cognitive Threading]
+    Orientation --> Output[Natural Language Output]
+    Safety --> Alert[Emergency Alert Trigger]
+    Reflection --> Summary[8 PM Daily Reflection]
+```
+
+## 🚀 Key Features
+
+### 1. **Proactive Orientation**
+Automatically identifies individuals, objects, and locations. 
+- *Input*: Image of a neighbor.
+- *Response*: "That is Sarah, your neighbor. She is wearing a green coat today."
+
+### 2. **Anomaly Detection & Redirection**
+Monitors for 'Sundowning' patterns or GPS wandering.
+- *Logic*: If time is evening and GPS indicates an unfamiliar route, ANCHOR initiates calming redirection.
+
+### 3. **PII Safety Layer**
+Robust regex-based redaction ensures that sensitive numerical data (bank PINs, credit cards) never leave the local environment or enter the model's history without masking.
+
+## 💻 Tech Spec
+- **Core Engine**: Google Gemini Pro 1.5/2.5
+- **Web Backend**: FastAPI (Python)
+- **Frontend**: ES6+ JavaScript, CSS3 (Glassmorphism), Semantic HTML5
+- **Security**: Local `.env` management and pattern-matching redaction.
+
+## ⚙️ Setup & Deployment
+
+```bash
+# Clone the repository
+git clone https://github.com/LiwaaCoder/ANCHOR-Agent.git
+
+# Install expert-tier dependencies
+pip install -r requirements.txt
+
+# Configure your secure credentials
+cp .env.example .env
+
+# Launch the platform
+uvicorn server:app --reload
+```
+
+---
+<p align="center">
+  <i>"Empowering memory through intelligent companionship."</i>
+</p>
